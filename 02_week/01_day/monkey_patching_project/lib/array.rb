@@ -12,11 +12,12 @@ class Array
 
   def median 
     return nil if self.length == 0
+    mid_idx = (self.length + 1) / 2 - 1
     new_self = self.sort
     if new_self.length.odd?
-      return new_self[new_self.length / 2]
+      return new_self[mid_idx]
     elsif new_self.length.even?
-      return (new_self[new_self.length/2] + new_self[new_self.length/2-1])/2.to_f
+      return (new_self[mid_idx] + new_self[mid_idx+1])/2.to_f
     end
   end
 
